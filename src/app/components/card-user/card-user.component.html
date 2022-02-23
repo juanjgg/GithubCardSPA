@@ -1,0 +1,23 @@
+<div class="finder ">
+  <h1 class="title">{{title}}</h1>
+  <div class="pseudo-search ">
+    <input type="text">
+    <button class="fa-brands fa-github"></button>
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </div>
+</div>
+<div class="center fixCenter">
+  <div class="card">
+    <div class="additional">
+      <div class="user-card">
+        <h1 class="level">{{user.login | uppercase}}</h1>
+        <img class="round" src="https://avatars.githubusercontent.com/u/28194461?v=4" alt="">
+        <h1 class="points">{{user.created_at | date: 'EE MMM d y'}}</h1>
+      </div>
+      <div class="more-info">
+        <!-- parte azul -->
+        <h1>{{user.name}}</h1>
+      </div>
+    </div>
+  </div>
+</div>

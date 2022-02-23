@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: fa-brands-400;
+    src: url(./assets/webfonts/fa-brands-400.ttf);
+
+    font-family: fa-regular-400;
+    src: url(./assets/webfonts/fa-regular-400.ttf);
+
+    font-family: fa-solid-900;
+    src: url(./assets/webfonts/fa-solid-900.ttf);
+
+    font-family: fa-v4compatibility;
+    src: url(./assets/webfonts/fa-v4compatibility.ttf);
+}
