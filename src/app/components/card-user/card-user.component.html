@@ -1,23 +1,60 @@
-<div class="finder ">
-  <h1 class="title">{{title}}</h1>
-  <div class="pseudo-search ">
-    <input type="text">
-    <button class="fa-brands fa-github"></button>
-    <i class="fa-solid fa-magnifying-glass"></i>
+<div class="finder">
+  <h1 class="text-compatibility">{{title}}</h1>
+  <div class="pseudo-search">
+    <form [formGroup]="formSearch" (ngSubmit)="getUserGitHub()">
+      <input formControlName="search" type="text" required>
+      <i class="fa-brands fa-github"></i>
+      <button type="submit" class="fa-solid fa-magnifying-glass"></button>
+    </form>
   </div>
 </div>
-<div class="center fixCenter">
+<div class="center fixCenter" *ngIf="!hiddenCard">
   <div class="card">
     <div class="additional">
       <div class="user-card">
-        <h1 class="level">{{user.login | uppercase}}</h1>
-        <img class="round" src="https://avatars.githubusercontent.com/u/28194461?v=4" alt="">
+        <h1 class="level text-compatibility">{{user.login | uppercase}}</h1>
+        <img class="round" [src]="user.avatar_url ==''? userDefault.avatar_url: user.avatar_url" alt="">
         <h1 class="points">{{user.created_at | date: 'EE MMM d y'}}</h1>
       </div>
       <div class="more-info">
         <!-- parte azul -->
-        <h1>{{user.name}}</h1>
+        <h1 class="text-compatibility">{{user.name == null ? userDefault.name: user.name}}</h1>
+        <div class="coords location-twitter">
+          <div>
+            <i class="fa-solid fa-location-dot"></i>
+            {{user.location == null? userDefault.location: user.location}}
+          </div>
+          <div>
+            <i class="fa-brands fa-twitter"></i>
+            @{{user.twitter_username == null ? userDefault.twitter_username: user.twitter_username}}
+          </div>
+        </div>
+        <div class="coords center">
+          <i class="fa-solid fa-blog"></i>
+          <a [href]="user.blog">{{user.blog ==''? userDefault.blog : user.blog}}</a>
+        </div>
+        <div class="stats">
+          <div>
+            <div class="title">REPOS</div>
+            <i class="fa-solid fa-code-branch"></i>
+            <div class="value">{{user.public_repos}}</div>
+          </div>
+          <div>
+            <div class="title">FOLLOWERS</div>
+            <i class="fa-solid fa-users"></i>
+            <div class="value">{{user.followers}}</div>
+          </div>
+          <div>
+            <div class="title">FOLLOWING</div>
+            <i class="fa-solid fa-user-group"></i>
+            <div class="value">{{user.following}}</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="center fixCenter" *ngIf="hiddenCard">
+  <h1>No hay usuarios que cumplan con el criterio de búsqueda</h1>
 </div>

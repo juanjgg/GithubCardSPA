@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CardUserModule } from './components/card-user/card-user.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import { CardUserModule } from './components/card-user/card-user.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     CardUserModule
   ],
   providers: [],

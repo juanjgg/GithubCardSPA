@@ -9,10 +9,14 @@ html, body {
 	left: 50%;
 	-webkit-transform: translate(-50%, 50%);
 	transform: translate(-50%, 50%);
+	display: flex;
+    flex-direction: column;
+	align-items: center;
 }
 
 .finder h1 {
 	font-size: 3em;
+	margin: 0px 0px 24px 0px;
 }
 
 .pseudo-search {
@@ -21,12 +25,12 @@ html, body {
 	border-radius: 100px;
 	padding: 10px 15px;
 	transition: background-color 0.5 ease-in-out;
+	left: 50%;
 }
 
 .pseudo-search input {
 	border: 0;
 	background-color: transparent;
-	width: 200px;
 }
 
 .pseudo-search input:focus {
@@ -112,10 +116,15 @@ button, i {
 	padding: 0.125rem 0.75rem;
 	border-radius: 100px;
 	white-space: nowrap;
+	margin: 10% 10%;
 }
-
+.card .additional .user-card .level {
+    margin-top: 20%;
+    margin-bottom: 0%;
+}
 .card .additional .user-card .points {
 	top: 85%;
+	margin-top: 0%;
 }
 
 .card .additional .more-info {
@@ -129,6 +138,7 @@ button, i {
 .card .additional .more-info h1 {
 	color: #fff;
 	margin-bottom: 0;
+	font-size: 26px;
 }
 
 .card.green .additional .more-info h1 {
@@ -139,6 +149,12 @@ button, i {
 	margin: 0 1rem;
 	color: #fff;
 	font-size: 1rem;
+}
+
+.location-twitter{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .card .additional .coords.center{
